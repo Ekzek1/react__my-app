@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import MyComponent from './components/MyComponent';
+import MyComponentClassBased from './components/MyComponentClassBased';
+import {ComponentsWithProps, Pre, Sidebar, UserProfile} from './components/ComponentsWithProps';
 
-function App() {
+const  App = () => {
+  let id = 0;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <UserProfile/>
+      <MyComponent/>
+      <MyComponentClassBased/>
+      <ComponentsWithProps title="New title"/>
+      <Pre title="123" id={id} prop1={1} prop2="3" />
+      <Sidebar title="Text" />
+    </>
+  )
 }
-
-export default App;
+export default App
